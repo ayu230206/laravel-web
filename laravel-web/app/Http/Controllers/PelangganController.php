@@ -18,12 +18,9 @@ class PelangganController extends Controller
     }
     public function store(Request $request)
     {
-        // Ubah format tanggal dari d/m/Y ke Y-m-d
-        $request->merge([
-            'birthday' => \Carbon\Carbon::createFromFormat('d/m/Y', $request->birthday)->format('Y-m-d'),
-        ]);
 
-        // Simpan hasil validasi ke dalam variabel $validated
+
+        
         $validated = $request->validate([
             'first_name' => ['required'],
             'last_name'  => ['required'],
@@ -39,10 +36,10 @@ class PelangganController extends Controller
         $data['email'] = $request->email;
         $data['phone'] = $request->phone;
 
-        // Simpan data ke database
+
         Pelanggan::create($data);
 
-        // Redirect ke halaman daftar pelanggan
+
         return redirect()->route('pelanggan.list')->with('success', 'Penambahan Data Berhasil!');
     }
     public function show(string $id)
@@ -57,10 +54,7 @@ class PelangganController extends Controller
     }
     public function update(Request $request)
     {
-        // Ubah format tanggal dari d/m/Y ke Y-m-d
-        $request->merge([
-            'birthday' => \Carbon\Carbon::createFromFormat('d/m/Y', $request->birthday)->format('Y-m-d'),
-        ]);
+
         $request->validate([
             'pelanggan_id' => ['required'],
             'first_name'   => ['required'],

@@ -622,13 +622,13 @@
 					<div class="col-md-6 mb-3">
 						<div>
 							<label for="first_name">First Name</label>
-							<input class="form-control" id="first_name" name="first_name" type="text" placeholder="Enter your first name" required>
+							<input class="form-control" id="first_name" name="first_name" type="text" placeholder="Enter your first name" value="{{ old('first name', $dataPelanggan->first_name) }}" required>
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
 						<div>
 							<label for="last_name">Last Name</label>
-							<input class="form-control" id="last_name" name="last_name" type="text" placeholder="Also your last name" required>
+							<input class="form-control" id="last_name" name="last_name" type="text" placeholder="Also your last name" value="{{ old('last name', $dataPelanggan->last_name) }}" required>
 						</div>
 					</div>
 				</div>
@@ -641,7 +641,7 @@
 									<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
 								</svg>
 							</span>
-							<input data-datepicker="" class="form-control" id="birthday" name="birthday" type="text" placeholder="dd/mm/yyyy" required>
+							<input data-datepicker="" class="form-control" id="birthday" name="birthday" type="date" placeholder="dd/mm/yyyy" value="{{ old('birthday', $dataPelanggan->birthday) }}"required>
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
@@ -657,13 +657,13 @@
 					<div class="col-md-6 mb-3">
 						<div class="form-group">
 							<label for="email">Email</label>
-							<input class="form-control" id="email" type="email" name="email" placeholder="name@company.com" required>
+							<input class="form-control" id="email" type="email" name="email" placeholder="name@company.com" value="{{ old('eamil', $dataPelanggan->email) }}" required>
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
 						<div class="form-group">
 							<label for="phone">Phone</label>
-							<input class="form-control" id="phone" type="number" name="phone" placeholder="+12-345 678 910" required>
+							<input class="form-control" id="phone" type="number" name="phone" placeholder="+12-345 678 910" value="{{ old('Phone', $dataPelanggan->phone) }}" required>
 						</div>
 					</div>
 				</div>
@@ -675,7 +675,7 @@
                 <input type="hidden" name="pelanggan_id" value="{{ $dataPelanggan->pelanggan_id}}"/>
 			</form>
 		</div>
-		
+
 		<footer class="bg-white rounded shadow p-5 mb-4 mt-4">
 			<div class="row">
 				<div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">

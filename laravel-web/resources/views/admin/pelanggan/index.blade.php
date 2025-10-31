@@ -46,8 +46,8 @@
 	<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
 		<a class="navbar-brand me-lg-5" href="../../index.html">
 			{{-- After --}}
-			<img class="navbar-brand-dark" src="{{ asset('assets-admin/img/brand/light.svg') }}" alt="Volt logo" />
-			<img class="navbar-brand-light" src="{{ asset('assets-admin/img/brand/dark.svg') }}" alt="Volt logo" />
+			<img class="navbar-brand-dark" src="{{ asset('assets-admin/assets/img/brand/light.svg') }}" alt="Volt logo" />
+			<img class="navbar-brand-light" src="{{ asset('assets-admin/assets/img/brand/dark.svg') }}" alt="Volt logo" />
 
 		</a>
 		<div class="d-flex align-items-center">
@@ -506,7 +506,6 @@
 									</a>
 								</div>
 							</div>
-						</li>
 						<li class="nav-item dropdown ms-lg-3">
 							<a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false">
