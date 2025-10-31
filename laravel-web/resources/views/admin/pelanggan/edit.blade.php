@@ -586,11 +586,11 @@
 						</li>
 						<li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
 						<li class="breadcrumb-item"><a href="{{route('pelanggan.list')}}"> Pelanggan </a></li>
-						<li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+						<li class="breadcrumb-item active" aria-current="page">Edit data </li>
 					</ol>
 				</nav>
-				<h2 class="h4">Tambah Data Pelanggan</h2>
-				<p class="mb-0">Form tambah data pelanggan baru </p>
+				<h2 class="h4">Edit Data Pelanggan</h2>
+				<p class="mb-0">Form Perubahan data pelanggan baru </p>
 			</div>
 			<div class="btn-toolbar mb-2 mb-md-0">
 				<a href="{{ route('pelanggan.list')}}" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
@@ -616,7 +616,7 @@
 			</div>
 			@endif
 
-			<form action="{{ route('pelanggan.store') }}" method="POST">
+			<form action="{{ route('pelanggan.update') }}" method="POST">
 				@csrf
 				<div class="row">
 					<div class="col-md-6 mb-3">
@@ -648,8 +648,8 @@
 						<label for="gender">Gender</label>
 						<select class="form-select mb-0" id="gender" name="gender" aria-label="Gender select example">
 							<option selected>Gender</option>
-							<option value="Female">Female</option>
-							<option value="Male">Male</option>
+							<option value="Female" {{ $dataPelanggan->gender == 'Female' ? 'selected' : '' }}>Female</option>
+                            <option value="Male" {{ $dataPelanggan->gender == 'Male' ? 'selected' : '' }}>Male</option>
 						</select>
 					</div>
 				</div>
@@ -669,11 +669,13 @@
 				</div>
 
 				<div class="mt-3">
-					<button class="btn btn-success text-white mt-2 animate-up-2" type="submit">Simpan</button>
+					<button class="btn btn-info text-white mt-2 animate-up-2" type="submit">Simpan Perubahan</button>
 				</div>
+
+                <input type="hidden" name="pelanggan_id" value="{{ $dataPelanggan->pelanggan_id}}"/>
 			</form>
 		</div>
-
+		
 		<footer class="bg-white rounded shadow p-5 mb-4 mt-4">
 			<div class="row">
 				<div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">

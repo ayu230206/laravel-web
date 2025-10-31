@@ -91,3 +91,9 @@ Route::post('/pelanggan', [PelangganController::class, 'store'])->name('pelangga
 Route::get('customer', [CustomerController::class, 'index'])->name('customer.list');
 Route::get('customer/create', [CustomerController::class, 'create'])->name('customer.create');
 Route::post('customer', [CustomerController::class, 'store'])->name('customer.store');
+
+
+//mod 7
+Route::get('/pelanggan/edit/{param1}', [PelangganController::class, 'edit'])->name('pelanggan.edit');
+Route::post('pelanggan/update', [PelangganController::class, 'update'])->name('pelanggan.update');
+Route::get('pelanggan/destroy/{param1}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');
